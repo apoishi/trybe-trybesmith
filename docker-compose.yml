@@ -38,6 +38,7 @@ services:
       MYSQL_HOST: db
       JWT_SECRET: secret
 
+
   # Serviço que irá rodar o banco de dados
   db:
     container_name: trybesmith_db
