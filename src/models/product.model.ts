@@ -19,9 +19,9 @@ export default class ProductModel {
 
   // Requirement 02
   public async getAll(): Promise<IProductID[]> {
-    const [products] = await this.connection
+    const [result] = await this.connection
       .execute<IProductID[] & RowDataPacket[]>('SELECT * FROM Trybesmith.Products');
  
-    return products;
+    return result;
   }
 }
