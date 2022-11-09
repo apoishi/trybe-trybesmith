@@ -4,10 +4,12 @@ const statusCodes = {
   BAD_REQUEST: 400,
   UNAUTHORIZED: 401,
   NOT_FOUND: 404,
+  UNPROCESSABLE: 422,
 };
 
 const mapStatusCode = (errorMessage: string): number => {
   if (errorMessage.includes('required')) return statusCodes.BAD_REQUEST;
+  if (errorMessage.includes('must')) return statusCodes.UNPROCESSABLE;
   return statusCodes.UNAUTHORIZED;
 };
 

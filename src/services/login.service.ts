@@ -3,7 +3,7 @@ import LoginModel from '../models/login.model';
 import generateToken from '../utils/jwt';
 import HttpException from '../utils/http.exception';
 import validateSchema from '../validations/validateSchema';
-import loginSchema from '../validations/schema';
+import { loginSchema } from '../validations/schema';
 import { statusCodes } from '../utils/statusCode';
 
 // Requirement 05
