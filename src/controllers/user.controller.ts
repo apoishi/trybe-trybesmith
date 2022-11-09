@@ -1,14 +1,14 @@
 import { Request, Response } from 'express';
-import UserService from '../services/user.service';
-
+import UsersService from '../services/user.service';
+import { statusCodes } from '../utils/statusCode';
 // Requirement 03
 export default class UserController {
-  public userService = new UserService();
+  public userService = new UsersService();
 
   async create(req: Request, res: Response) {
     const user = req.body;
 
     const token = await this.userService.create(user);
-    res.status(201).json({ token });
+    res.status(statusCodes.CREATED).json({ token });
   }
 }

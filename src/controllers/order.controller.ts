@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import OrderService from '../services/order.service';
+import { statusCodes } from '../utils/statusCode';
 
 // Requirement 04
 export default class OrderController {
@@ -7,6 +8,6 @@ export default class OrderController {
 
   async getAll(_req: Request, res: Response) {
     const orders = await this.orderService.getAll();
-    res.status(200).json(orders);
+    res.status(statusCodes.OK).json(orders);
   }
 }
