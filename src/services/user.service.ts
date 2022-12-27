@@ -11,8 +11,8 @@ export default class UsersService {
 
   public async create(userData: IUser) {
     await validateSchema(userSchema, userData);
-    await this.user.create(userData);
-    const token = generateToken(userData);
+    const user = await this.user.create(userData);
+    const token = generateToken(user);
     return token;
   }
 }
